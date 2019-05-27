@@ -14,7 +14,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Files"></activity>
         <activity android:name=".Front_page" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".Outdoor" />
         <activity
             android:name=".Conference"
