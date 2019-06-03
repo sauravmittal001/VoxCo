@@ -14,8 +14,13 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+<<<<<<< HEAD
         android:text="Test Case"
         android:textSize="50dp"
+=======
+        android:text="@string/test_case"
+        android:textSize="50sp"
+>>>>>>> e9a9ae9dcb66fba49c8d567c4f088fd3075f733a
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

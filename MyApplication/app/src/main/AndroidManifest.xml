@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
 
 
         <activity
@@ -23,15 +24,28 @@
             </intent-filter>
         </activity>
 
+=======
+>>>>>>> e9a9ae9dcb66fba49c8d567c4f088fd3075f733a
         <activity android:name=".FilesActivity" />
         <activity android:name=".FrontPageActivity" />
         <activity android:name=".OutdoorActivity" />
         <activity android:name=".IndoorActivity" />
+        <activity android:name=".IndexActivity" />
         <activity
             android:name=".ConferenceActivity"
             android:label="@string/title_activity_conference"
             android:theme="@style/AppTheme.NoActionBar" />
+<<<<<<< HEAD
         <activity android:name=".IndexActivity" />
+=======
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+>>>>>>> e9a9ae9dcb66fba49c8d567c4f088fd3075f733a
     </application>
 
 </manifest>
