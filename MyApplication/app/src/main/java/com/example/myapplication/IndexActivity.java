@@ -1,11 +1,10 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class IndexActivity extends AppCompatActivity {
 
@@ -13,7 +12,6 @@ public class IndexActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index);
-
 
         Button StartConferenceButtonObject = (Button) findViewById(R.id.StartConferenceButton);
 
@@ -54,5 +52,7 @@ public class IndexActivity extends AppCompatActivity {
                 IndexActivity.this.startActivity(myIntent);
             }
         });
+
+
     }
 }

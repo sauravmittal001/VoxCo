@@ -1,8 +1,7 @@
 package com.example.myapplication;
 
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class OutdoorActivity extends AppCompatActivity {
 
