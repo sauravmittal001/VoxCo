@@ -1,10 +1,11 @@
 package com.example.myapplication;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
 
 public class IndexActivity extends AppCompatActivity {
 
@@ -13,7 +14,7 @@ public class IndexActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index);
 
-        Button StartConferenceButtonObject = (Button) findViewById(R.id.StartConferenceButton);
+        Button StartConferenceButtonObject = findViewById(R.id.StartConferenceButton);
 
         StartConferenceButtonObject.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,7 +24,7 @@ public class IndexActivity extends AppCompatActivity {
             }
         });
 
-        Button OutdoorButtonObject = (Button) findViewById(R.id.OutdoorButton);
+        Button OutdoorButtonObject = findViewById(R.id.OutdoorButton);
 
         OutdoorButtonObject.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,7 +34,7 @@ public class IndexActivity extends AppCompatActivity {
             }
         });
 
-        Button IndoorButtonObject = (Button) findViewById(R.id.IndoorButton);
+        Button IndoorButtonObject = findViewById(R.id.IndoorButton);
 
         IndoorButtonObject.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,12 +44,22 @@ public class IndexActivity extends AppCompatActivity {
             }
         });
 
-        Button FilesButtonObject = (Button) findViewById(R.id.FilesButton);
+        Button FilesButtonObject = findViewById(R.id.FilesButton);
 
         FilesButtonObject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(IndexActivity.this, FilesActivity.class);
+                IndexActivity.this.startActivity(myIntent);
+            }
+        });
+
+        Button ConnectButtonObject = findViewById(R.id.ConnectButton);
+
+        ConnectButtonObject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(IndexActivity.this, BluetoothActivity.class);
                 IndexActivity.this.startActivity(myIntent);
             }
         });
