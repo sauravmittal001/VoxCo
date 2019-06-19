@@ -5,10 +5,9 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-    <!--Work with profiles
-        https://developer.android.com/guide/topics/connectivity/bluetooth#Profiles
-    -->
+    <uses-feature android:name="android.hardware.bluetooth" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BluetoothActivity"></activity>
+        <activity android:name=".DeviceAdapterList"></activity>
+        <activity android:name=".DiscoverActivity" />
+        <activity android:name=".BluetoothActivity" />
         <activity android:name=".FilesActivity" />
         <activity android:name=".IndoorActivity" />
         <activity android:name=".OutdoorActivity" />
