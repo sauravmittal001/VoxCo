@@ -64,6 +64,16 @@ public class IndexActivity extends AppCompatActivity {
             }
         });
 
+        Button BackButtonObject = findViewById(R.id.BackButton);
+
+        BackButtonObject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.os.Process.killProcess(android.os.Process.myPid());
+                System.exit(1);
+            }
+        });
+
 
     }
 }
