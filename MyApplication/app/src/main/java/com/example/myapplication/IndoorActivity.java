@@ -7,6 +7,7 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -48,6 +49,10 @@ public class IndoorActivity extends AppCompatActivity {
                 record.setEnabled(false);
                 stop.setEnabled(true);
                 Toast.makeText(getApplicationContext(), "Recording started", Toast.LENGTH_LONG).show();
+                TextView textView = findViewById(R.id.textView5);
+
+                MediaRecorder mediaRecorder = new MediaRecorder();
+                textView.setText(String.valueOf(mediaRecorder.getMaxAmplitude()));
             }
         });
 
@@ -80,3 +85,7 @@ public class IndoorActivity extends AppCompatActivity {
         });
     }
 }
+
+//TODO: For Indoor-Outdoor Activity: Vibrate sensor for threshold dB.
+//TODO: Make "Set Envoronment" feature
+//TODO: Improve UI

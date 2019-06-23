@@ -221,3 +221,5 @@ public class DiscoverActivity extends AppCompatActivity {
 
     }
 }
+
+//TODO: Improve UI

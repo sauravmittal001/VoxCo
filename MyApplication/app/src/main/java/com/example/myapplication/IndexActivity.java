@@ -77,3 +77,5 @@ public class IndexActivity extends AppCompatActivity {
 
     }
 }
+
+//TODO: Improve UI

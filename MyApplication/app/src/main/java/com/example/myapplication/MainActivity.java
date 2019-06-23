@@ -24,3 +24,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
+//TODO: Improve UI (Try to add more animations)

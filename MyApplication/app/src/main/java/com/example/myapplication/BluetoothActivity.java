@@ -88,3 +88,7 @@ public class BluetoothActivity extends AppCompatActivity {
 
 
 }
+
+
+//TODO: Bluetooth Connect feature
+//TODO: Improve the UI

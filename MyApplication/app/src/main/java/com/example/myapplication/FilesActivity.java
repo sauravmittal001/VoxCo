@@ -11,3 +11,7 @@ public class FilesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_files);
     }
 }
+
+//TODO: Save feature
+//TODO: Delete and Star Feature
+//TODO: Improve UI
