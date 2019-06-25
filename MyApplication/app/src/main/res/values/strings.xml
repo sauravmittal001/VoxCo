@@ -2,4 +2,6 @@
     <string name="app_name">My Application</string>
     <string name="prompt_password">Name of Person1</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="tagline">Making You Hear</string>
+    <string name="voxco">VoxCo</string>
 </resources>
