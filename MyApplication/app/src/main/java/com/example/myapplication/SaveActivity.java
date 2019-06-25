@@ -18,7 +18,7 @@ public class SaveActivity extends AppCompatActivity {
         buttonCancelObject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(SaveActivity.this, ConferenceActivity.class);
+                Intent myIntent = new Intent(SaveActivity.this, IndexActivity.class);
                 SaveActivity.this.startActivity(myIntent);
             }
         });

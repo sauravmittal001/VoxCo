@@ -18,7 +18,7 @@
         android:layout_marginBottom="8dp"
         android:text="@string/voxco"
         android:textColor="#E0F7FA"
-        android:textSize="84sp"
+        android:textSize="64sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,22 +28,22 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="194dp"
+        android:layout_width="151dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/tagline"
-        android:textStyle="italic"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="19sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342" />
+        app:layout_constraintVertical_bias="0.31" />
 
 
     <ImageView

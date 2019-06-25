@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         Handler mHandler = new Handler();
         mHandler.postDelayed(new Runnable() {
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent indent = new Intent(MainActivity.this, IndexActivity.class);
                 startActivity(indent);
             }
-        }, 1000L);
+        }, 1500L);
 
     }
 }
