@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".BluetoothActivity">
 
+
     <Button
         android:id="@+id/buttonON"
         android:layout_width="50dp"

@@ -74,6 +74,18 @@ public class IndexActivity extends AppCompatActivity {
             }
         });
 
+        //added pair activity
+
+        Button PairButtonObject = findViewById(R.id.PairButton);
+
+        PairButtonObject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(IndexActivity.this, PairActivity.class);
+                IndexActivity.this.startActivity(myIntent);
+            }
+        });
+
 
     }
 }
