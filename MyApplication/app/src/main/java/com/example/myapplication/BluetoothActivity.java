@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -23,6 +24,7 @@ public class BluetoothActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bluetooth);
+        getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         Button buttonON = findViewById(R.id.buttonON);
         Button buttonOFF = findViewById(R.id.buttonOFF);
         final BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();

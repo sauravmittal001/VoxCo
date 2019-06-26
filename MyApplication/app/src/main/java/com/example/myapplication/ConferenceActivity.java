@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.provider.Settings;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
@@ -27,17 +29,18 @@ public class ConferenceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conference);
-
-        Button buttonConferenceCancelObject = findViewById(R.id.buttonConferenceCancel);
+        getWindow().getDecorView().setBackgroundColor(Color.WHITE);
+        FloatingActionButton buttonConferenceCancelObject = findViewById(R.id.buttonConferenceCancel);
 
         buttonConferenceCancelObject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(ConferenceActivity.this, IndexActivity.class);
-                ConferenceActivity.this.startActivity(myIntent);
+                /*Intent myIntent = new Intent(ConferenceActivity.this, IndexActivity.class);
+                ConferenceActivity.this.startActivity(myIntent);*/
+                finish();
             }
         });
-        Button buttonConferenceSaveObject = findViewById(R.id.buttonConferenceSave);
+        FloatingActionButton buttonConferenceSaveObject = findViewById(R.id.buttonConferenceSave);
         buttonConferenceSaveObject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,13 +123,13 @@ public class ConferenceActivity extends AppCompatActivity {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_UP:
                         mSpeechRecognizerdoosra.stopListening();
-                        editTextdoosra.setHint("You will see person 1 input here");
+                        editTextdoosra.setHint("   Person 2 input");
                         break;
 
                     case MotionEvent.ACTION_DOWN:
                         mSpeechRecognizerdoosra.startListening(mSpeechRecognizerIntentdoosra);
                         editTextdoosra.setText("");
-                        editTextdoosra.setHint("Listening...");
+                        editTextdoosra.setHint("   Listening...");
                 }
                 return false;
             }
@@ -207,13 +210,13 @@ public class ConferenceActivity extends AppCompatActivity {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_UP:
                         mSpeechRecognizer.stopListening();
-                        editText.setHint("You will see person 2 input here");
+                        editText.setHint("   Person 1 input");
                         break;
 
                     case MotionEvent.ACTION_DOWN:
                         mSpeechRecognizer.startListening(mSpeechRecognizerIntent);
                         editText.setText("");
-                        editText.setHint("Listening...");
+                        editText.setHint("   Listening...");
                 }
                 return false;
             }

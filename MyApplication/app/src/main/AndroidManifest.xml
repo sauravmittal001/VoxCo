@@ -6,10 +6,11 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <uses-feature android:name="android.hardware.bluetooth" />
+
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
 
     <application
         android:allowBackup="true"
@@ -19,12 +20,13 @@
         android:roundIcon="@mipmap/ic_launcher_new2_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PairActivity"/>
+        <activity android:name=".IndoorActivity"></activity>
+        <activity android:name=".PairActivity" />
         <activity android:name=".SaveActivity" />
         <activity android:name=".DiscoverActivity" />
         <activity android:name=".BluetoothActivity" />
         <activity android:name=".FilesActivity" />
-        <activity android:name=".IndoorActivity" />
+        <activity android:name=".RecordActivity" />
         <activity android:name=".OutdoorActivity" />
         <activity android:name=".ConferenceActivity" />
         <activity android:name=".IndexActivity" />
@@ -34,6 +36,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

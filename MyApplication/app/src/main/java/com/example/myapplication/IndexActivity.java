@@ -1,11 +1,13 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 
 public class IndexActivity extends AppCompatActivity {
@@ -14,6 +16,7 @@ public class IndexActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index);
+        getWindow().getDecorView().setBackgroundColor(Color.WHITE);
 
         Button StartConferenceButtonObject = findViewById(R.id.StartConferenceButton);
 
@@ -25,7 +28,8 @@ public class IndexActivity extends AppCompatActivity {
             }
         });
 
-        Button OutdoorButtonObject = findViewById(R.id.OutdoorButton);
+
+        final Button OutdoorButtonObject = findViewById(R.id.OutdoorButton);
 
         OutdoorButtonObject.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,12 +39,21 @@ public class IndexActivity extends AppCompatActivity {
             }
         });
 
-        Button IndoorButtonObject = findViewById(R.id.IndoorButton);
+        final Button IndoorButtonObject = findViewById(R.id.IndoorButton);
 
         IndoorButtonObject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(IndexActivity.this, IndoorActivity.class);
+                IndexActivity.this.startActivity(myIntent);
+            }
+        });
+        FloatingActionButton RecordButtonObject = findViewById(R.id.recordButton);
+
+        RecordButtonObject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(IndexActivity.this, RecordActivity.class);
                 IndexActivity.this.startActivity(myIntent);
             }
         });
@@ -54,8 +67,8 @@ public class IndexActivity extends AppCompatActivity {
                 IndexActivity.this.startActivity(myIntent);
             }
         });
-
-        Button ConnectButtonObject = findViewById(R.id.ConnectButton);
+/*
+        final Button ConnectButtonObject = findViewById(R.id.ConnectButton);
 
         ConnectButtonObject.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,8 +77,8 @@ public class IndexActivity extends AppCompatActivity {
                 IndexActivity.this.startActivity(myIntent);
             }
         });
-
-        Button BackButtonObject = findViewById(R.id.BackButton);
+*/
+        ImageButton BackButtonObject = findViewById(R.id.BackButton);
 
         BackButtonObject.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +90,7 @@ public class IndexActivity extends AppCompatActivity {
 
         //added pair activity
 
-        Button PairButtonObject = findViewById(R.id.PairButton);
+        FloatingActionButton PairButtonObject = findViewById(R.id.PairButton);
 
         PairButtonObject.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,8 +100,31 @@ public class IndexActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        // toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle arrow click here
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
+
+        return super.onOptionsItemSelected(item);
+    }*/
 
     }
+
 }
+
 
 //TODO: Improve UI

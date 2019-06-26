@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -42,6 +43,7 @@ public class PairActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pair);
+        getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         listViewDetected = (ListView) findViewById(R.id.listViewDetected);
         listViewPaired = (ListView) findViewById(R.id.listViewPaired);
         buttonSearch = (Button) findViewById(R.id.buttonSearch);
@@ -159,7 +161,7 @@ public class PairActivity extends AppCompatActivity {
                 }//connect(bdDevice);
                 Log.i("Log", "The bond is created: "+isBonded);
             }
-        }.start();
+        }.play();
     }*/
     private Boolean connect(BluetoothDevice bdDevice) {
         Boolean bool = false;
@@ -207,16 +209,22 @@ public class PairActivity extends AppCompatActivity {
             switch (view.getId()) {
                 case R.id.buttonOn:
                     onBluetooth();
+                    Toast toast1 = Toast.makeText(getApplicationContext(), "VoxCo Connection On", Toast.LENGTH_SHORT);
+                    toast1.show();
                     break;
                 case R.id.buttonSearch:
                     arrayListBluetoothDevices.clear();
                     startSearching();
+                    Toast toast2 = Toast.makeText(getApplicationContext(), "Searching", Toast.LENGTH_SHORT);
+                    toast2.show();
                     break;
                 case R.id.buttonDesc:
                     makeDiscoverable();
                     break;
                 case R.id.buttonOff:
                     offBluetooth();
+                    Toast toast3 = Toast.makeText(getApplicationContext(), "VoxCo Connection Off", Toast.LENGTH_SHORT);
+                    toast3.show();
                     break;
                 default:
                     break;
@@ -269,7 +277,7 @@ public class PairActivity extends AppCompatActivity {
         }
     };
     private void startSearching() {
-        Log.i("Log", "in the start searching method");
+        Log.i("Log", "in the play searching method");
         IntentFilter intentFilter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
         PairActivity.this.registerReceiver(myReceiver, intentFilter);
         bluetoothAdapter.startDiscovery();

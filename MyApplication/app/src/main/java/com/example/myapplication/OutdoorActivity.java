@@ -14,10 +14,13 @@ public class OutdoorActivity extends AppCompatActivity {
 */
 package com.example.myapplication;
 import android.app.Activity;
+import android.graphics.Color;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class OutdoorActivity extends Activity {
@@ -40,8 +43,16 @@ public class OutdoorActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_outdoor);
+        getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         mStatusView = (TextView) findViewById(R.id.status);
 
+        ImageButton buttonBack = findViewById(R.id.buttonBack);
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         if (runner == null)
         {
@@ -60,7 +71,7 @@ public class OutdoorActivity extends Activity {
                 }
             };
             runner.start();
-            Log.d("Noise", "start runner()");
+            Log.d("Noise", "play runner()");
         }
     }
 
@@ -133,5 +144,4 @@ public class OutdoorActivity extends Activity {
         mEMA = EMA_FILTER * amp + (1.0 - EMA_FILTER) * mEMA;
         return mEMA;
     }
-
 }
