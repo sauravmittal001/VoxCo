@@ -1,34 +1,22 @@
-/*package com.example.myapplication;
-
-import android.app.Activity;
-import android.graphics.Color;
-import android.media.MediaRecorder;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
-
-public class IndoorActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_indoor);
-    }
-}*/
-
 package com.example.myapplication;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class IndoorActivity extends Activity {
 
@@ -53,7 +41,7 @@ public class IndoorActivity extends Activity {
         setContentView(R.layout.activity_indoor);
         getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         mStatusView = (TextView) findViewById(R.id.status);
-
+        Button colorButton = findViewById(R.id.IndoorColorButton);
         ImageButton buttonBack = findViewById(R.id.buttonBack);
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +55,7 @@ public class IndoorActivity extends Activity {
                 public void run() {
                     while (runner != null) {
                         try {
-                            Thread.sleep(1000);
+                            Thread.sleep(25);
                             Log.i("Noise", "Tock");
                         } catch (InterruptedException e) {
                         }
@@ -116,6 +104,8 @@ public class IndoorActivity extends Activity {
             }
 
             //mEMA = 0.0;
+
+
         }
 
     }
@@ -128,8 +118,55 @@ public class IndoorActivity extends Activity {
         }
     }
 
+//    public void updateTv() {
+//        mStatusView.setText(Double.toString((getAmplitudeEMA())) + " dB");
+//    }
+
+//    public void updateTv() {
+//        mStatusView.setText(Double.toString(soundDb(getAmplitude())) + " dB");
+//    }
+    View view;
+
     public void updateTv() {
-        mStatusView.setText(Double.toString((getAmplitudeEMA())) + " dB");
+        mStatusView.setText(Double.toString(round(convertdDb(getAmplitude()))) + " dB");
+        View colorButton = findViewById(R.id.IndoorColorButton);
+        if (convertdDb(getAmplitude()) >= (double)60) {
+            Vibrator v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+//            v.vibrate(VibrationEffect.DEFAULT_AMPLITUDE);
+            v.vibrate(400);
+//            getWindow().getDecorView().setBackgroundColor(Color.BLUE);
+            colorButton.setBackgroundColor(Color.rgb(255,99,33));
+        }
+        else {
+            colorButton.setBackgroundColor(Color.rgb(255,255,255));
+        }
+    }
+
+
+    public double round(double value) {
+        value  *= 1;
+        Integer i = (int)value;
+        double j = (double)i;
+        j /= 1;
+        return j;
+    }
+
+
+    public double convertdDb(double amplitude) {
+        // Cellphones can catch up to 90 db + -
+        // getMaxAmplitude returns a value between 0-32767 (in most phones). that means that if the maximum db is 90, the pressure
+        // at the microphone is 0.6325 Pascal.
+        // it does a comparison with the previous value of getMaxAmplitude.
+        // we need to divide maxAmplitude with (32767/0.6325)
+        //51805.5336 or if 100db so 46676.6381
+        double EMA_FILTER = 0.6;
+        SharedPreferences sp = this.getSharedPreferences("device-base", MODE_PRIVATE);
+        double amp = (double) sp.getFloat("amplitude", 0);
+        double mEMAValue = EMA_FILTER * amplitude + (1.0 - EMA_FILTER) * mEMA;
+        Log.d("db", Double.toString(amp));
+        //Assuming that the minimum reference pressure is 0.000085 Pascal (on most phones) is equal to 0 db
+        // samsung S9 0.000028251
+        return 20 * (float) Math.log10((mEMAValue / 51805.5336) / 0.000028251);
     }
 
     public double soundDb(double ampl) {

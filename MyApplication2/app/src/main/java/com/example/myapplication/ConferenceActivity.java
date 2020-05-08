@@ -53,7 +53,7 @@ public class ConferenceActivity extends AppCompatActivity {
         checkPermission();
 
 
-//doosra
+        //doosra
         final EditText editTextdoosra = findViewById(R.id.editTextdoosra);
 
         final SpeechRecognizer mSpeechRecognizerdoosra = SpeechRecognizer.createSpeechRecognizer(this);
