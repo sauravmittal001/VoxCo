@@ -1,4 +1,4 @@
-![alt text](https://i.pinimg.com/originals/cc/99/97/cc99974d6cca908cb5e14dd0754815f9.png)
+![alt text](https://github.com/sauravmittal001/VoxCo/blob/master/MyApplication2/app/src/main/ic_launcher_new2-web.png)
 # Live Transcribe App
 
 > Transcription of spoken words into text and alerts for risky situations
