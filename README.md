@@ -75,7 +75,7 @@ $ git clone https://github.com/sauravmittal001/VoxCo
 
 **Idea: Using microphones to receiving words from two persons simultaneously, separating those mixed speech signals and converting it into text will enable a person with hearing impairment to engage in a group conversation comfortably. Additionally, saving the conversation if he/she misses something for future reference would also help.**
 
-The project went through multiple phases, and the solution got re-shaped as it proceeded. The PPT and pdf of the initial proposal can be found [here](https://github.com/sauravmittal001/VoxCo/blob/master/DISA%20PPT.pdf) and [here](https://github.com/sauravmittal001/VoxCo/blob/master/Project%20VoxCo%20proposal.pdf). TL;DR, we were trying to build a device for hearing impaired persons by using the Blind Source Separation. The full project setup and theory can be understood [here](https://www.diva-portal.org/smash/get/diva2:830315/FULLTEXT01.pdf).
+The project went through multiple phases, and the solution got re-shaped as it proceeded. The PPT and pdf of the initial proposal can be found [here](https://github.com/sauravmittal001/VoxCo/blob/master/DISA%20PPT.pdf) and [here](https://github.com/sauravmittal001/VoxCo/blob/master/Project%20VoxCo%20proposal.pdf). TL;DR, we were trying to build a device for hearing impaired persons by using Blind Source Separation. The full project setup and theory can be understood [here](https://www.diva-portal.org/smash/get/diva2:830315/FULLTEXT01.pdf).
 The project involved: 
 - Separating two independent mixed sound signals into original sound signals by maximising non-Gaussianity.
 - Implementing Fast ICA algorithm for component extraction in MATLAB through fixed-point iteration scheme.
